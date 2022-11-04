@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline';">
+    <link href="../css/stylesCPU.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>PBL4</title>
+  </head>
+ <body>
+  <div class="wrapper">
+    <div class="cpu-structure">
+      <div class="flex-property">
+        <ul class="property">
+          <!--  -->
+        </ul>
+      </div>
+      <div class="flex-value" >
+        <ul class="value">
+          <!-- -->
+        </ul>
+      </div>
+    </div>
+    <div class="cpu-performance"></div>
+  </div>
+    <!-- You can also require other files to run in this process -->
+    <script type="module" src="../../Script/CPU/handleDataCPU.js"></script>
+    <script type="module" src="../../Script/CPU/renderElement.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+/* styles.css */
+
+/* Add styles here to customize the appearance of your app */
+* {
+    font-family: 'Comfortaa', cursive;
+}
+html {
+  background-color:rgb(236, 241, 241);
+}
+.cpu-structure {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    overflow-y: scroll;
+    height: 400px;
+  }
+  .cpu-performance{
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    height: 350px;
+  }
+  .cpu-structure .flex-property {
+    margin: 0 10px ;
+    flex: 20%;
+  }
+  .cpu-structure .flex-value{
+    margin: 0 10px ;
+    flex: 55%;
+  }
+  .cpu-structure  ul {
+    list-style: none;
+    padding: 0;
+  }
+  .cpu-structure  li {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+  .cpu-structure  h6 {
+    color: slategray;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 20px ;
+  }
