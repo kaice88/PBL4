@@ -1,44 +1,54 @@
-/* styles.css */
 
-/* Add styles here to customize the appearance of your app */
-* {
-    font-family: 'Comfortaa', cursive;
+/* Custom table */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
-html {
-  background-color:rgb(236, 241, 241);
+
+body {
+  font-family: Lato, sans-serif;
+  justify-content: center;
+  align-items: center;
+  color: #4f546c;
+  font-size: 0.9rem;
 }
-.mem-structure {
-    display: flex;
-    background-color: rgb(255, 255, 255);
-    overflow-y: scroll;
-    height: 400px;
-  }
-  .mem-performance{
-    background-color: rgb(255, 255, 255);
-    margin-top: 10px;
-    height: 350px;
-  }
-  .mem-structure .flex-property {
-    margin: 0 10px ;
-    flex: 20%;
-  }
-  .mem-structure .flex-value{
-    margin: 0 10px ;
-    flex: 55%;
-  }
-  .mem-structure  ul {
-    list-style: none;
-    padding: 0;
-  }
-  .mem-structure  li {
-    color: rgb(0, 0, 0);
+
+table {
+  border-collapse: collapse;
+  background-color: white;
+  text-align: left;
+}
+
+  th {
     font-size: 14px;
-    font-weight: 500;
-    margin: 10px 0;
+    background-color: rgb(208, 222, 242);
+    padding: 1.25rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1;
+    font-weight: 900;
+    text-align: center;
+    width: 50%;
   }
-  .mem-structure  h6 {
-    color: slategray;
-    font-size: 14px;
-    font-weight: 700;
-    margin: 0 0 20px ;
+   
+  td {
+    padding: 1rem 2rem;
+    text-align: center;
+    width:50%;
   }
+
+  table tr:hover td{
+    background:rgba(208, 222, 242, 0.5);
+  }
+
+  /* Color alternating rows */
+  tr:nth-child(even) {
+    background-color: #f3f8fe;
+  }
+
+
+

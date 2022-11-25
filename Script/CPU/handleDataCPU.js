@@ -35,11 +35,3 @@ export const objInfo = () =>
     obj[item[0]] = item[1];
     return obj;
   }, {});
-// du lieu khi xuat ra co dang:
-// const info = {
-//   name: 'lieu',
-//   age: 18,
-// }
-// khi xuar ra co dang:
-// name   lieu
-// age    18

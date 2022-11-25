@@ -1,0 +1,129 @@
+<!-- 
+
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+     <script src="../../node_modules/canvasjs/dist/canvasjs.min.js"></script>
+      <script type="module">
+           window.onload = function  () {
+              var chart = new CanvasJS.Chart("chartContainer", {
+                  data: [
+                  {
+                      type: "column",
+                      dataPoints: [
+                      { x: 10, y: 10 },
+                      { x: 20, y: 15 },
+                      { x: 30, y: 25 },
+                      { x: 40, y: 30 },
+                      { x: 50, y: 28 }
+                      ]
+                  }
+                  ]
+              });
+     
+              chart.render();
+          }
+      </script>
+    </head>
+    <body >
+      <div id="chartContainer" style="height: 400px; width: 50%;"></div>
+    </body>
+    </html>
+ -->
+  <!-- <!DOCTYPE html>
+ <html>
+ <head>
+     <title>Canvas test</title>
+     <script src="../../node_modules/canvasjs/dist/canvasjs.min.js"></script>
+ </head>
+ <body>
+     <div id="chartContainer" style="height: 500px; width: 50%;"></div>
+     
+     <script type="text/javascript">
+        window.addEventListener('load', function () {
+ 
+            var chart = new CanvasJS.Chart("chartContainer", {
+                data: [
+                    {
+                        type: "column",
+                        dataPoints: [
+                            { x: 10, y: 10 },
+                            { x: 20, y: 15 },
+                            { x: 30, y: 25 },
+                            { x: 40, y: 30 },
+                            { x: 50, y: 28 }
+                        ]
+                    }
+                ]
+            });
+    
+            chart.render();
+        });
+        
+     </script>
+ </body>
+ </html>
+   -->
+ 
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- <script src="../../node_modules/canvasjs/dist/canvasjs.js"></script> -->
+  
+</head>
+
+<body>
+	<div id="chartContainer" style="height: 300px; max-width: 920px; margin: 0px auto;">
+	</div>
+    <script type="module">
+        require('../../node_modules/canvasjs/dist/canvasjs.js', function(CanvasJS){
+              window.onload = function () {
+    
+                var dps = [];   //dataPoints. 
+          
+                var chart = new CanvasJS.Chart("chartContainer",{
+                    title :{
+                        text: "Live Data"
+                    },
+                    axisX: {						
+                        title: "Axis X Title"
+                    },
+                    axisY: {						
+                        title: "Units"
+                    },
+                    data: [{
+                        type: "line",
+                        dataPoints : dps
+                    }]
+                });
+          
+                chart.render();
+            }
+                   // Add your stuff here
+            });
+                /*var xVal = dps.length + 1;
+          var yVal = 0;	
+          var updateInterval = 1000;
+    
+          var updateChart = function () {
+              
+              
+              yVal = Math.random(100);
+              dps.push({x: xVal,y: yVal});
+              
+              xVal++;
+              if (dps.length >  60 )
+              {
+                  dps.shift();				
+              }
+    
+              chart.render();		 */
+    
+        // update chart after specified time. 
+    
+    
+  //  setInterval(function(){updateChart()}, updateInterval); 
+
+    </script>
+</body>
+</html> 

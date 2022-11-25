@@ -4,19 +4,11 @@
 * {
     font-family: 'Comfortaa', cursive;
 }
-html {
-  background-color:rgb(236, 241, 241);
-}
+
 .cpu-structure {
     display: flex;
     background-color: rgb(255, 255, 255);
     overflow-y: scroll;
-    height: 400px;
-  }
-  .cpu-performance{
-    background-color: rgb(255, 255, 255);
-    margin-top: 10px;
-    height: 350px;
   }
   .cpu-structure .flex-property {
     margin: 0 10px ;

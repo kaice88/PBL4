@@ -1,17 +1,22 @@
 import { objInfo } from "./handleDataCPU.js";
-const properties = document.querySelector(" .cpu-structure .property");
-const values = document.querySelector(" .cpu-structure .value");
 
+const table = document.querySelector(".tableCPU");
+const str = ["Property", "Value"];
 function createElement() {
-  var str1 = `<h6>Thông số</h6>`;
-  var str2 = `<h6>Giá trị</h6>`;
-  Object.keys(objInfo()).forEach((key) => {
-    str1 += `<li>${key.toString().trim()}</li>`;
+  var str1 = `<tr class="title_table">`;
+  var str2 = ``;
+  str.forEach((item) => {
+    str1 += `<th>${item}</th>`;
   });
-  properties.innerHTML = str1;
-  Object.values(objInfo()).forEach((value) => {
-    str2 += `<li>${value.toString().trim()}</li>`;
+  str1 += `</tr>`;
+
+  Object.keys(objInfo()).forEach((item, index) => {
+    var str3 = `<tr class="normal_table">`;
+    str3 += `<td>${item}</td><td>${objInfo()[item]}</td></tr>`;
+    str2 += str3;
   });
-  values.innerHTML = str2;
+
+  table.innerHTML = str1 + str2;
 }
+
 createElement();
