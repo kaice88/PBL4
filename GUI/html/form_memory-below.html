@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline';">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline';"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styleMem-below.css">
     <title>Document</title>
 </head>
 <body>
     <!-- dưới -->
-    <table class="mem" border="0">
-        <tr class="mem1">
-           
-        </tr>
-        <tr class="mem2">
-           
-        </tr>
-    </table>
+  
+    <div class="container">
+        <div class="container1">
+            <div>
+                <h6>Memory</h6>
+                <table class="mem" border="0">
+                    <tr class="mem1">
+                       
+                    </tr>
+                    <tr class="mem2">
+                       
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <h6>Swap</h6>
+                <table class="swap" border="0">
+                    <tr class="swap1">
+                       
+                    </tr>
+                    <tr class="swap2">
+                       
+                    </tr>
+                </table>
+            </div>
+             
+        </div>
+        <div class="container2">
+            <canvas id="myChart"  style="height:250px; width: 50%;"></canvas>
+        </div>
+        <div class="container3">
+           <h6>kB Used</h6>
+        </div>
+    </div>
     <script type="module" src="../../Script/Memory/handleDataMem2.js"></script>
     <script type="module" src="../../Script/Memory/renderElement2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </body>
 </html>

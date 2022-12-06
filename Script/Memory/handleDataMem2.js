@@ -15,13 +15,14 @@ const strToArr = (str) => {
   return arr;
 };
 
-const arrayInfo = () => {
+const arrayInfo = (index) => {
   const data = execSync("top -b -n 1").toString();
   const array = data.split("\n");
-  return strToArr(array[3]).slice(1);
+  return strToArr(array[index]).slice(1);
 };
-export const objInfo = () =>
-  arrayInfo().reduce((obj, item) => {
+
+export const objInfo = (index) =>
+  arrayInfo(index).reduce((obj, item) => {
     const arr = item.split(/\s+/);
     obj[arr[1]] = arr[0];
     return obj;

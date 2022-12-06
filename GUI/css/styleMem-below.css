@@ -1,22 +1,16 @@
 *{
   
     box-sizing: border-box;
-    font-family: 'Tahoma', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* body{
-    background: #e3edf7;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
+
 tr {
     padding-bottom: 10px;
 }
 table{
     border-spacing: 10px;
-    padding: 15px;
+    padding: 5px 20px 0;
 }
 th{
     border-left: 2px dashed rgb(79, 151, 184);
@@ -42,3 +36,31 @@ h4{
     color: rgba(28, 28, 28, 0.5);
     margin: 0 10px 0;
 }
+.container{
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: rgb(255, 255, 255);
+  }
+  .container .container1{
+    margin: 0 10px ;
+    display: flex;
+   
+  }
+  .container .container2{
+    margin: 0 10px ;
+    
+  }
+  .container .container3 h6{
+    margin: 10px 16px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1c1c1c80;
+  }
+  .container1 h6 {
+    margin: 10px 33px 0px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    color: rgb(0 0 0 / 98%);
+  }
