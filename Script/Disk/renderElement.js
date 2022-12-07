@@ -1,7 +1,7 @@
 import { arrInfo } from "./handleDataDisk.js";
 const table = document.querySelector(".tableDisk");
 function createElement() {
-  const str = ["Filesystem", "Total", "Used", "Available", "", "Mounted-on"];
+  const str = ["Filesystem", "Total", "Used", "Available", "", "Mountedon"];
   var str1 = `<tr class="title_table">`;
   var str2 = ``;
   str.forEach((item, index) => {

@@ -1,7 +1,7 @@
 *{
   
     box-sizing: border-box;
-    font-family: 'Tahoma', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* body{
@@ -43,3 +43,23 @@ h4{
     color: rgba(28, 28, 28, 0.5);
     margin: 0 10px 0;
 }
+.container{
+    display: flex;
+    flex-direction:  column-reverse;
+    background-color: rgb(255, 255, 255);
+  }
+  .container .container1{
+    margin: 0 10px ;
+   
+  }
+  .container .container2{
+    margin: 0 10px ;
+    
+  }
+  .container .container3 h6{
+    margin: 10px 16px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1c1c1c80;
+  }

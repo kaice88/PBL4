@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline';">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' https://fonts.gstatic.com/; style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline';"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styleCPU-below.css">
     <title>Document</title>
 </head>
 <body>
     <!-- dưới -->
-    <table class="cpu" border="0">
-        <tr class="cpu1">
-           
-        </tr>
-        
-        <tr class="cpu2">
-           
-        </tr>
-    </table>
+    <div class="container">
+       
+        <div class="container1">
+            <table class="cpu" border="0">
+                <tr class="cpu1">
+                   
+                </tr>
+                
+                <tr class="cpu2">
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="container2">
+            <canvas id="myChart"  style="height:250px; width: 50%;"></canvas>
+        </div>
+        <div class="container3">
+            <h6>% Ultimate</h6>
+         </div>
+    </div>
+   
     <script type="module" src="../../Script/CPU/handleDataCPU2.js"></script>
     <script type="module" src="../../Script/CPU/renderElement2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </body>
 </html>
