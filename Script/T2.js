@@ -12,3 +12,8 @@ tabs.forEach((tab) => {
     this.classList.add("active");
   };
 });
+
+$('.sub-btn').onclick = function() {
+  $('.sub-menu').classList.toggle("display");
+  $('.dropdown').classList.toggle("rotate");
+}

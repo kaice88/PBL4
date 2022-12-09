@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styleDisk-usage.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Noto+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/3.5.1/jquery.mobile-3.5.1.min.css" />
+	<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/3.5.1/jquery.mobile-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="table_container">
+        <div class="table">
+            <div class="thead">
+                <div class="tr">
+                    <div class="title td">Folder</div>
+                    <div class="title td">Size</div>
+                    <div class="title td">Contents</div>
+                </div>
+            </div>
+            <div class="tbody">
+                <div class="tr sub-btn">
+                    <div class="td">
+                        <i class="fa-solid fa-caret-right dropdown"></i>
+                        pablo
+                    </div>
+                    <div class="td">56,0GB</div>
+                    <div class="td">176B835 items</div>
+                </div>
+                <div class="sub-menu display">
+                    <div class="tr">
+                        <div class="td" id="none_i">pablo</div>
+                        <div class="td">56,0GB</div>
+                        <div class="td">176B835 items</div>
+                    </div>
+                    <div class="tr">
+                        <div class="td" id="none_i">pablo</div>
+                        <div class="td">56,0GB</div>
+                        <div class="td">176B835 items</div>
+                    </div>
+                    <div class="tr">
+                        <div class="td" id="none_i">pablo</div>
+                        <div class="td">56,0GB</div>
+                        <div class="td">176B835 items</div>
+                    </div>
+                    <div class="tr">
+                        <div class="td" id="none_i">pablo</div>
+                        <div class="td">56,0GB</div>
+                        <div class="td">176B835 items</div>
+                    </div>
+                    <div class="tr sub-btn">
+                        <div class="td">
+                            <i class="fa-solid fa-caret-right dropdown"></i>
+                            pablo
+                        </div>
+                        <div class="td">56,0GB</div>
+                        <div class="td">176B835 items</div>
+                    </div>
+                    <div class="sub-menu display">
+                        <div class="tr">
+                            <div class="td"  id="none_i">pablo</div>
+                            <div class="td">56,0GB</div>
+                            <div class="td">176B835 items</div>
+                        </div>
+                        <div class="tr">
+                            <div class="td" id="none_i">pablo</div>
+                            <div class="td">56,0GB</div>
+                            <div class="td">176B835 items</div>
+                        </div>
+                        <div class="tr">
+                            <div class="td" id="none_i">pablo</div>
+                            <div class="td">56,0GB</div>
+                            <div class="td">176B835 items</div>
+                        </div>
+                        <div class="tr">
+                            <div class="td" id="none_i">pablo</div>
+                            <div class="td">56,0GB</div>
+                            <div class="td">176B835 items</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="td" id="none_i">pablo</div>
+                    <div class="td">56,0GB</div>
+                    <div class="td">176B835 items</div>
+                </div>
+                <div class="tr sub-btn">
+                    <div class="td">
+                        <i class="fa-solid fa-caret-right dropdown"></i>
+                        pablo
+                    </div>
+                    <div class="td">56,0GB</div>
+                    <div class="td">176B835 items</div>
+                </div>
+                <div class="sub-menu display">
+                    <div class="tr">
+                        <div class="td" id="none_i">pablo</div>
+                        <div class="td">56,0GB</div>
+                        <div class="td">176B835 items</div>
+                    </div>
+                    <div class="tr">
+                        <div class="td" id="none_i">pablo</div>
+                        <div class="td">56,0GB</div>
+                        <div class="td">176B835 items</div>
+                    </div>
+                    <div class="tr">
+                        <div class="td" id="none_i">pablo</div>
+                        <div class="td">56,0GB</div>
+                        <div class="td">176B835 items</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.sub-btn').click(function () {
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.dropdown').toggleClass('rotate');
+            });
+        });
+    </script>
+</body>
+</html>
