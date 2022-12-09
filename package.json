@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "@grapecity/wijmo.purejs.all": "5.20221.857-rc",
-    "bootstrap": "3.3.7",
+    "bootstrap": "5.2.3",
     "canvasjs": "^1.8.3",
     "chart.js": "^4.0.1",
     "jquery": "^3.6.1",
