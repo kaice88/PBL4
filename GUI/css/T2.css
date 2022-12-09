@@ -36,7 +36,33 @@ ul.list-tabs li:hover .left-tab {
     color:#000; 
 }
 
+a.left-tab:hover{
+    background-color: rgba(85, 132, 172, 0.5);
+    border: 1px solid rgb(196, 215, 224);
+    color:#000; 
+}
+
 .left-tab.active{
     background-color: #5584AC;
     color:#fff; 
+}
+
+.dropdown {
+    position: absolute;
+    right: 0;
+    margin: 12px 20px;
+    transition: 0.3s ease;
+    font-size: 13px;
+}
+
+.display{
+    display: none;
+}
+
+.sub-item{
+    padding-left: 65px;
+}
+
+.rotate{
+    transform: rotate(90deg);
 }

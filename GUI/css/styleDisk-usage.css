@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #4f546c;
+}
+
+.table {
+  border-collapse: collapse;
+  background-color: white;
+  text-align: left;
+
+  overflow: auto; 
+}
+
+.thead {
+  font-size: 14px;
+  background-color: rgb(208, 222, 242);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 1;
+  font-weight: 900;
+  text-align: center;
+  
+  overflow: auto;
+  /* position: absolute;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%; */
+}
+
+.thead .td{
+  padding: 1.25rem 2rem;
+}
+
+.tbody .td{
+  padding: 1rem 2rem;
+}
+
+.td {
+  text-align: center;
+
+  width: calc(100%/3);
+  float: left;
+  overflow: auto; 
+}
+
+.tr {
+  overflow: auto;
+} 
+
+div.tr:hover .td {
+  background: rgba(208, 222, 242, 0.5);
+}
+
+/* .tr:nth-child(even) {
+    background-color: #f3f8fe;
+  } */
+
+.display {
+  display: none;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.table .tbody .sub-menu.display {
+  background: rgba(222, 245, 229, 0.6);
+}
+
+.tbody {
+  overflow: auto;
+  /* position: fixed;
+  width: 100%;
+  top: 57px;
+  left: 0; */
+}
+
+i {
+  float: left;
+}
+
+div#none_i {
+  padding-left: 40px;
+}
