@@ -13,7 +13,7 @@
 const { execSync } = require("child_process");
 
 const infoMem = execSync("cat /proc/meminfo").toString();
-// => [["tuoi","20"],["ngay sinh","49"],["noi o",""hoa tien"]]
+
 const arrayInfo = () => {
   const array = [];
   infoMem
