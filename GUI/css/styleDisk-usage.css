@@ -32,11 +32,12 @@ body {
   text-align: center;
   
   overflow: auto;
-  /* position: absolute;
+  position: absolute;
     padding: 0;
-    top: 0;
+    /* top: 0;*/
+    top:49px;
     left: 0;
-    width: 100%; */
+    width:100%;
 }
 
 .thead .td{
@@ -50,7 +51,7 @@ body {
 .td {
   text-align: center;
 
-  width: calc(100%/3);
+  width: calc(100%/2);
   float: left;
   overflow: auto; 
 }
@@ -81,10 +82,12 @@ div.tr:hover .td {
 
 .tbody {
   overflow: auto;
-  /* position: fixed;
+  position: fixed;
   width: 100%;
-  top: 57px;
-  left: 0; */
+  /* top: 57px; */
+  top: 106px;
+  left: 0;
+  height: 656px;
 }
 
 i {
@@ -93,4 +96,13 @@ i {
 
 div#none_i {
   padding-left: 40px;
+}
+
+.txt p{
+  padding: 1rem 2rem;
+  font-style: italic;
+  color: #4f546c;
+  font-size: 16px;
+  letter-spacing: 0.06rem;
+
 }
