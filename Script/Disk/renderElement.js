@@ -2,14 +2,14 @@ import { arrInfo } from "./handleDataDisk.js";
 const table = document.querySelector(".tableDisk");
 function createElement() {
   const str = ["Filesystem", "Total", "Used", "Available", "", "Mountedon"];
-  var str1 = `<tr class="title_table">`;
-  var str2 = ``;
+  var str1 = `<thead><tr class="title_table">`;
+  var str2 = `<tbody>`;
   str.forEach((item, index) => {
     if (index != 4) {
       str1 += `<th>${item}</th>`;
     }
   });
-  str1 += `<th>${str[4]}</th></tr>`;
+  str1 += `<th>${str[4]}</th></tr></thead>`;
 
   arrInfo().forEach((item, index) => {
     if (index > 0) {
@@ -28,6 +28,7 @@ function createElement() {
       str2 += str3;
     }
   });
+  str2 += '</tbody>';
   table.innerHTML = str1 + str2;
 }
 function updateProgressBar(progressBar, value) {

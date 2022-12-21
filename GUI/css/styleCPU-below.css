@@ -62,4 +62,14 @@ h4{
     font-weight: 400;
     font-size: 16px;
     color: #1c1c1c80;
+    float: left;
   }
+  .container3 .model_name p {
+    font-weight: normal;
+    font-size: 22px;
+    margin-right: 25px;
+    margin: 3px 0;
+    float: left;
+    position: absolute;
+    right: 30px;
+}

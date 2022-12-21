@@ -32,7 +32,6 @@ table {
     font-size: 1;
     font-weight: 900;
     text-align: center;
-
   }
    
   td {
@@ -85,4 +84,24 @@ table {
   0%{
     width: 0;
   }
+}
+
+.content .task_content p{
+  float: left;
+  padding-bottom: 1rem;
+  font-size: 17px;
+  padding-top: 1rem;
+
+}
+.content .task_content .title{
+  padding-left: 2rem;
+}
+
+.content .task_content .txt{
+  padding-right: 1rem;
+}
+
+.content .task_content .number{
+  font-weight: bold;
+  padding-right: 0.5rem;
 }
