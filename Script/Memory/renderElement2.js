@@ -60,17 +60,21 @@ const lineChart = new Chart(ctx, {
     datasets: [
       {
         fill: false,
-        lineTension: 0.3,
+        lineTension: 0.0,
         backgroundColor: "rgba(0,0,0,255,0.1)",
         borderColor: "rgba(0,0,255,0.8)",
         data: [],
+        borderWidth: 1.5,
+        pointRadius: 0,
       },
       {
         fill: false,
-        lineTension: 0.3,
+        lineTension: 0.0,
         backgroundColor: "rgba(255,0,0,0.1)",
         borderColor: "rgba(255,0,0,0.8)",
         data: [],
+        borderWidth: 1.5,
+        pointRadius: 0,
       },
     ],
   },

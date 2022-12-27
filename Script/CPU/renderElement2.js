@@ -1,6 +1,7 @@
-import { objInfo } from "./handleDataCPU2.js";
-const cpu1 = document.querySelector(" .cpu .cpu1");
-const cpu2 = document.querySelector(" .cpu .cpu2");
+import { objInfo, modelName } from "./handleDataCPU2.js";
+const cpu1 = document.querySelector(" .container1 .cpu1 .cpu");
+const cpu2 = document.querySelector(" .container1 .cpu2 .cpu");
+const model_name = document.querySelector(" .model_name-value p");
 
 const name = [
   "User",
@@ -8,29 +9,41 @@ const name = [
   "Nice",
   "Idle",
   "IO Wait",
-  "Hardware Irq",
-  "Software Irq",
+  "Hardware",
+  "Software",
   "Steal",
 ];
 function createElement(obj) {
-  var str1 = ``;
   var str2 = ``;
-  Object.values(obj).forEach((item, i) => {
-    if (i <= 3) {
-      str1 += `<th class="solid-line">
-      <h4>${name[i]}</h4>
-      <h2>${item}%</h2>
-      </th>`;
+  var str3 = ``;
+  var str = ``;
+  obj.forEach((i, index) => {
+    str = `<tr class="cpu1">`;
+    if (index % 2 == 0) {
+      Object.values(i).forEach((item, index) => {
+        if (index <= 3) {
+          str += `<th class="solid-line">
+        <h4>${name[index]}</h4>
+        <h2>${item}%</h2>
+        </th>`;
+        }
+      });
+      str2 += str + `</tr>`;
     } else {
-      str2 += `<th>
-      <h4>${name[i]}</h4>
-      <h2>${item}%</h2>
-      </th>`;
+      Object.values(i).forEach((item, index) => {
+        if (index <= 3) {
+          str += `<th >
+          <h4>${name[index]}</h4>
+          <h2>${item}%</h2>
+          </th>`;
+        }
+      });
+      str3 += str + `</tr>`;
     }
   });
 
-  cpu1.innerHTML = str1;
-  cpu2.innerHTML = str2;
+  cpu1.innerHTML = str2;
+  cpu2.innerHTML = str3;
 }
 const ctx = document.getElementById("myChart");
 var xValues = [];
@@ -45,10 +58,75 @@ const lineChart = new Chart(ctx, {
     datasets: [
       {
         fill: false,
-        lineTension: 0.3,
+        lineTension: 0.0,
+        backgroundColor: "rgba(0,255,0,0.1)",
+        borderColor: "rgba(0,255,0,0.8)",
+        data: [],
+        borderWidth: 1.5,
+        pointRadius: 0,
+      },
+      {
+        fill: false,
+        lineTension: 0.0,
         backgroundColor: "rgba(0,0,255,0.1)",
         borderColor: "rgba(0,0,255,0.8)",
         data: [],
+        borderWidth: 1.5,
+        pointRadius: 0,
+      },
+      {
+        fill: false,
+        lineTension: 0.0,
+        backgroundColor: "rgba(0,0,255,0.1)",
+        borderColor: "rgba(0,0,255,0.8)",
+        data: [],
+        borderWidth: 1.5,
+        pointRadius: 0,
+      },
+      {
+        fill: false,
+        lineTension: 0.0,
+        backgroundColor: "rgba(0,0,255,0.1)",
+        borderColor: "rgba(0,0,255,0.8)",
+        data: [],
+        borderWidth: 1.5,
+        pointRadius: 0,
+      },
+      {
+        fill: false,
+        lineTension: 0.0,
+        backgroundColor: "rgba(0,0,255,0.1)",
+        borderColor: "rgba(0,0,255,0.8)",
+        data: [],
+        borderWidth: 1.5,
+        pointRadius: 0,
+      },
+      {
+        fill: false,
+        lineTension: 0.0,
+        backgroundColor: "rgba(0,0,255,0.1)",
+        borderColor: "rgba(0,0,255,0.8)",
+        data: [],
+        borderWidth: 1.5,
+        pointRadius: 0,
+      },
+      {
+        fill: false,
+        lineTension: 0.0,
+        backgroundColor: "rgba(0,0,255,0.1)",
+        borderColor: "rgba(0,0,255,0.8)",
+        data: [],
+        borderWidth: 1.5,
+        pointRadius: 0,
+      },
+      {
+        fill: false,
+        lineTension: 0.0,
+        backgroundColor: "rgba(0,0,255,0.1)",
+        borderColor: "rgba(0,0,255,0.8)",
+        data: [],
+        borderWidth: 1.5,
+        pointRadius: 0,
       },
     ],
   },
@@ -62,17 +140,26 @@ const lineChart = new Chart(ctx, {
 });
 
 function updateChart(obj) {
-  var yData =
-    parseFloat(Object.values(obj)[0].replaceAll(",", ".")) +
-    parseFloat(Object.values(obj)[1].replaceAll(",", "."));
+  var yData = new Array(8);
+  obj.forEach((item, index) => {
+    yData[index] =
+      parseFloat(Object.values(item)[0].replaceAll(",", ".")) +
+      parseFloat(Object.values(item)[1].replaceAll(",", "."));
+  });
+
   if (lineChart.data.datasets[0].data.length < 60) {
-    lineChart.data.datasets[0].data.push(yData);
+    obj.forEach((item, index) => {
+      lineChart.data.datasets[index].data.push(yData[index]);
+    });
   } else {
-    lineChart.data.datasets[0].data.pop();
-    lineChart.data.datasets[0].data.unshift(yData);
+    obj.forEach((item, index) => {
+      lineChart.data.datasets[index].data.pop();
+      lineChart.data.datasets[index].data.unshift(yData[index]);
+    });
   }
   lineChart.update();
 }
+model_name.innerHTML = modelName();
 var set = setInterval(() => {
   var obj = objInfo();
   createElement(obj);

@@ -1,5 +1,8 @@
 import { arrayInfo } from "./handleDataProcesses.js";
+import { objInfo } from "../Memory/handleDataMem2.js";
+
 const table = document.querySelector(".tableProcesses");
+const tasks = document.querySelectorAll(".task_content .number");
 function createElement() {
   var str1 = `<thead><tr class="title_table">`;
   var str2 = `<tbody>`;
@@ -18,8 +21,11 @@ function createElement() {
       str2 += str3;
     }
   });
-  str2 +='</tbody>';
+  str2 += "</tbody>";
   table.innerHTML = str1 + str2;
+  tasks.forEach((item, index) => {
+    item.innerHTML = Object.values(objInfo(1))[index];
+  });
 }
 var set = setInterval(() => {
   createElement();

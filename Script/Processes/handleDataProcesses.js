@@ -12,7 +12,6 @@ export const arrayInfo = () => {
   const data = execSync("top -b -n 1").toString();
   const arr = [];
   const array = data.split("\n");
-  console.log(array.length);
   for (let i = 6; i < array.length; i++) {
     arr.push(strToArr(array[i]).slice(1));
   }
