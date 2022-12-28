@@ -1,18 +1,5 @@
 const { execSync } = require("child_process");
 
-// const duCmd = "cd ~/ && du -shx * | sort -hr";
-// // console.log(data);
-// const data1 = "";
-// var key = `Downloads`;
-// var str = `&& cd ${key}`;
-// try {
-//   data1 = execSync(`cd ~/ && cd top3  && du -shx * | sort -hr`).toString();
-//   console.log(data1);
-// } catch (er) {
-//   data1 = "Error";
-//   // console.log("loi ne " + er + " loi ne");
-// }
-
 const arrayInfo = (str) => {
   var data = "Error";
   try {
@@ -37,8 +24,6 @@ const arrayInfo = (str) => {
       );
     });
   return array;
-  // }
-  // return data;
 };
 
 export const objInfo = (str) => {
@@ -50,12 +35,3 @@ export const objInfo = (str) => {
   }
   return "null";
 };
-
-// du lieu khi xuat ra co dang:
-// const info = {
-//   name: 'lieu',
-//   age: 18,
-// }
-// khi xuar ra co dang:
-// name   lieu
-// age    18

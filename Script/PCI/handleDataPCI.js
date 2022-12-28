@@ -17,14 +17,13 @@ const strToArr = (str) => {
   return arr;
 };
 
-const arrayInfo = () => {
+export const arrayInfo = () => {
   const array1 = data.split("\n");
   const array2 = [];
   array1.forEach((item) => {
     array2.push(strToArr(item));
   });
   array2.pop();
+  array2.pop();
   return array2;
 };
-
-console.log(arrayInfo());

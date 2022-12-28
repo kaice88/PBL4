@@ -12,18 +12,37 @@ table{
     border-spacing: 10px;
     padding: 5px 20px 0;
 }
-th{
-    border-left: 2px dashed rgb(79, 151, 184);
+/* th{
+   border-left: 2px dashed;
     text-align: left;
     padding-right: 30px;
 }
 
 th.solid-line{
-    border-left: 2px solid rgb(79, 151, 184);
+  border-left: 2px solid;
     text-align: left;
     padding-right: 30px;
+} */
+th.mem.solid-line {
+  border-left: 2px solid rgb(206, 119, 119);
+  text-align: left;
+    padding-right: 30px;
 }
-
+ th.mem{
+  border-left: 2px dashed rgb(206, 119, 119);
+  text-align: left;
+    padding-right: 30px;
+}
+th.swap.solid-line {
+  border-left: 2px solid rgb(115, 169, 173);
+  text-align: left;
+  padding-right: 30px;
+}
+th.swap{
+  border-left: 2px dashed rgb(115, 169, 173);
+  text-align: left;
+  padding-right: 30px;
+}
 h2{
     font-weight: normal;    
     font-size: 22px;
@@ -57,10 +76,19 @@ h4{
     font-size: 16px;
     color: #1c1c1c80;
   }
-  .container1 h6 {
+  .container1 .hmem {
     margin: 10px 33px 0px;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 300;
-    color: rgb(0 0 0 / 98%);
+    font-weight: 400;
+    color: rgb(206, 119, 119);
   }
+  .container1 .hswap {
+    margin: 10px 33px 0px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(115, 169, 173);
+  }
+  
+ 

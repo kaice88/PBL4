@@ -1,6 +1,6 @@
-import { objInfo } from "./handleDataPCI.js";
+import { objInfo } from "./handleDataBat.js";
 
-const table = document.querySelector(".tableCPU");
+const table = document.querySelector(".tableBattery");
 const str = ["Property", "Value"];
 function createElement() {
   var str1 = `<thead><tr class="title_table">`;

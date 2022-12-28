@@ -1,6 +1,5 @@
 import { objInfo } from "./handleDataMem2.js";
-const mem1 = document.querySelector(" .mem .mem1");
-const mem2 = document.querySelector(" .mem .mem2");
+const mem = document.querySelector(".mem");
 
 const name1 = ["Total", "Free", "Used", "Buff/cache"];
 function createElementMem(obj) {
@@ -8,23 +7,29 @@ function createElementMem(obj) {
   var str2 = ``;
   Object.values(obj).forEach((item, i) => {
     if (i <= 1) {
-      str1 += `<th class="solid-line">
+      str1 += `<th class="solid-line mem">
       <h4>${name1[i]}</h4>
       <h2>${item} kB</h2>
       </th>`;
     } else {
-      str2 += `<th >
+      str2 += `<th class="mem">
       <h4>${name1[i]}</h4>
       <h2>${item} kB</h2>
       </th>`;
     }
   });
-  mem1.innerHTML = str1;
-  mem2.innerHTML = str2;
+  mem.innerHTML =
+    `<h6 class="hmem">MEMORY</h6><table class="mem" border="0">` +
+    `<tr class="mem1">` +
+    str1 +
+    `</tr>` +
+    `<tr class="mem2">` +
+    str2 +
+    `</tr>` +
+    `</table>`;
 }
 
-const swap1 = document.querySelector(" .swap .swap1");
-const swap2 = document.querySelector(" .swap .swap2");
+const swap = document.querySelector(" .swap ");
 
 const name2 = ["Total", "Free", "Used", "Avail Mem"];
 function createElementSwap(obj) {
@@ -32,19 +37,26 @@ function createElementSwap(obj) {
   var str2 = ``;
   Object.values(obj).forEach((item, i) => {
     if (i <= 1) {
-      str1 += `<th class="solid-line">
+      str1 += `<th class="solid-line swap">
       <h4>${name2[i]}</h4>
       <h2>${item} kB</h2>
       </th>`;
     } else {
-      str2 += `<th >
+      str2 += `<th class="swap" >
       <h4>${name2[i]}</h4>
       <h2>${item} kB</h2>
       </th>`;
     }
   });
-  swap1.innerHTML = str1;
-  swap2.innerHTML = str2;
+  swap.innerHTML =
+    `<h6 class="hswap">SWAP</h6><table class="swap" border="0">` +
+    `<tr class="swap1">` +
+    str1 +
+    `</tr>` +
+    `<tr class="swap2">` +
+    str2 +
+    `</tr>` +
+    `</table>`;
 }
 
 const ctx = document.getElementById("myChart");
@@ -62,18 +74,18 @@ const lineChart = new Chart(ctx, {
         fill: false,
         lineTension: 0.0,
         backgroundColor: "rgba(0,0,0,255,0.1)",
-        borderColor: "rgba(0,0,255,0.8)",
+        borderColor: "rgb(206, 119, 119)",
         data: [],
-        borderWidth: 1.5,
+        borderWidth: 3,
         pointRadius: 0,
       },
       {
         fill: false,
         lineTension: 0.0,
         backgroundColor: "rgba(255,0,0,0.1)",
-        borderColor: "rgba(255,0,0,0.8)",
+        borderColor: "rgb(115, 169, 173)",
         data: [],
-        borderWidth: 1.5,
+        borderWidth: 3,
         pointRadius: 0,
       },
     ],
@@ -101,10 +113,15 @@ function updateChart(obj1, obj2) {
   }
   lineChart.update();
 }
+var obj1 = objInfo(3);
+var obj2 = objInfo(4);
+createElementMem(obj1);
+createElementSwap(obj2);
+updateChart(obj1, obj2);
 var set = setInterval(() => {
   var obj1 = objInfo(3);
   var obj2 = objInfo(4);
   createElementMem(obj1);
   createElementSwap(obj2);
   updateChart(obj1, obj2);
-}, 500);
+}, 1000);

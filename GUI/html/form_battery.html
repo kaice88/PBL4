@@ -4,152 +4,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/stylesMem.css">
     <link rel="stylesheet" href="../css/styleBattery.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/component.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <title>Document</title>
-    <style>
-        body {
-    background-color: #efefef;
-    padding: 25px;
-}
-
-.container {
-    max-width: 900px;
-    width: 100%;
-    margin: 25px auto;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 2px 20px #0001, 0 1px 6px #0001;
-    border-radius: 5px;
-    overflow-x: auto;
-}
-
-._table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-._table :is(th, td) {
-    border: 1px solid #0002;
-    padding: 8px 10px;
-}
-
-._table th {
-    position: relative;
-    user-select: none;
-}
-
-i.sort.asc{
-   transform: rotate(180deg);
-   top: 12px;
-}
-
-i.sort{
-    display: flex;
-    position: absolute;
-    top: 5px;
-    right: 18px;
-    cursor: pointer;
-}
-    </style>
 </head>
 <body>
-    <div>
-
-        <div class="refresh_but">
-            <button type="submit" value="Submit">
-                <i class="fa-solid fa-rotate-right"></i>
-            </button>
+    <div class="battery__container">
+        <div class="battery_table">
+            <div class="table">
+                <table class="tableBattery">
+                
+                </table>
+              </div>
         </div>
-
-        <div class="container">
-            <table class="_table table_sort">
-              <thead>
-                <tr>
-                  <th>SL
-                  <div class="pid_icon"><i class="fa-solid fa-sort-down sort"></i></div>
-                    
-                  </th>
-                  <th>Name</th>
-                  <th>Phone</th>
-                  <th>Address</th>
-                </tr>
-              </thead>
-              <tbody id="table_filter">
-                <tr>
-                  <td>02</td>
-                  <td>Tamim</td>
-                  <td>+8801770 xxxxxx</td>
-                  <td>Address One</td>
-                </tr>
-                <tr>
-                  <td>01</td>
-                  <td>Khalid Hossain</td>
-                  <td>+8801770 xxxxxx</td>
-                  <td>Address Two</td>
-                </tr>
-                <tr>
-                  <td>03</td>
-                  <td>Sadik Hossain</td>
-                  <td>+8801770 xxxxxx</td>
-                  <td>Address Three</td>
-                </tr>
-              </tbody>  
-            </table>
-          </div>      
-
+        <div class="battery_img">
+            <div class="battery">
+              <div class="battery__card">
+                  <div class="battery__data">
+                      <p class="battery__text">Battery</p>
+                      <h1 class="battery__percentage">
+                          
+                      </h1>
+  
+                      <p class="battery__status">
+                          Low battery
+                          <i class="ri-plug-line green-color"></i>
+                      </p>
+                  </div>
+  
+                  <div class="battery__pill">
+                      <div class="battery__level">
+                          <div class="battery__liquid"></div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
     </div>
     <script>
-        let table_sort_elements = document.querySelectorAll('table');
-if(table_sort_elements)
-{
-    table_sort_elements = Array.isArray(table_sort_elements) ? table_sort_elements : Object.values(table_sort_elements);
-    table_sort_elements.forEach(table_sort_element=>{
-        let thead_cells = table_sort_element.querySelectorAll('thead>tr>th>*');
-        let icon = document.querySelector('i.sort');
-        // console.log(icon);
-        if(thead_cells)
-        {
-            thead_cells = Array.from(thead_cells);
+        initBattery()
 
-            thead_cells.forEach((thead_cell, index)=>{
-                thead_cell.addEventListener('click', function(){
-                  icon.classList.toggle('asc');
-                  this.classList.toggle('asc');
-                    sortTableByColumn(table_sort_element, index, !this.classList.contains('asc'));
-                });
-            });
+        function initBattery(){
+            const batteryLiquid = document.querySelector('.battery__liquid'),
+                  batteryStatus = document.querySelector('.battery__status'),
+                  batteryPercentage = document.querySelector('.battery__percentage')
+
+            navigator.getBattery().then((batt) =>{
+                updateBattery = () =>{
+                    // cap nhat phan tram pin
+                    let level = Math.floor(batt.level * 100)
+                    batteryPercentage.innerHTML = level + '%'
+                    
+                    // cap nhat do cao phan tram pin
+                    // batteryLiquid.style.height = '${parseInt(batt.level * 100)}%'
+                    batteryLiquid.style.height = level + '%'
+
+                    if(level == 100){
+                        batteryStatus.innerHTML = 'Full battery <i class="ri-battery-2-fill green-color"></i>'
+                        batteryLiquid.style.height = '103%' 
+                        //  to hide the ellipse
+                    }
+                    else if(level <=20 &! batt.charging){
+                        batteryStatus.innerHTML = 'Low battery <i class="ri-plug-line animated-red"></i>'
+                    }
+                    else if(batt.charging){
+                        batteryStatus.innerHTML = 'Charging... <i class="ri-flashlight-line animated-green"></i>'
+                    }
+                    else{
+                        batteryStatus.innerHTML=''
+                    }
+
+                    // doi mau va xoa mau khac
+                    if(level<=20){
+                        batteryLiquid.classList.add('gradient-color-red')
+                        batteryLiquid.classList.remove('gradient-color-orange', 'gradient-color-yellow', 'gradient-color-green')
+                    }
+                    else if(level <=40){
+                        batteryLiquid.classList.add('gradient-color-orange')
+                        batteryLiquid.classList.remove('gradient-color-red', 'gradient-color-yellow', 'gradient-color-green')
+                    }
+                    else if(level <=80){
+                        batteryLiquid.classList.add('gradient-color-yellow')
+                        batteryLiquid.classList.remove('gradient-color-red', 'gradient-color-orange', 'gradient-color-green')
+                    }
+                    else{
+                        batteryLiquid.classList.add('gradient-color-green')
+                        batteryLiquid.classList.remove('gradient-color-red', 'gradient-color-orange', 'gradient-color-yellow')
+                    }
+                }
+                updateBattery()
+
+                // 
+                batt.addEventListener('chargingchange', () => {updateBattery()})
+                batt.addEventListener('levelchange', () => {updateBattery()})
+
+            })
         }
-    });
-}
-
-
-function sortTableByColumn(table, column, desc=false) 
-{
-    let tbody = table.querySelector('tbody'),
-        rows  = tbody.querySelectorAll('tr');
-
-    rows  = rows.isArray ? rows : Object.values(rows);
-
-    function compare(a, b) {
-        let aText = a.children[column].innerText.trim(),
-            bText = b.children[column].innerText.trim();
-        
-        return (aText < bText) ? -1 : 1;
-    }
-
-    rows.sort(compare);
-
-    if(desc) rows.reverse();
-
-    tbody.innerHTML = '';
-
-    let i = 0;
-    while (i<rows.length) {
-        tbody.appendChild(rows[i]);
-        i++;
-    }
-}
     </script>
+    <script type="module" src="../../Script/Battery/handleDataBat.js"></script>
+    <script type="module" src="../../Script/Battery/renderElement.js"></script>
 </body>
 </html>

@@ -50,6 +50,33 @@ th.cpu{
     border-left: 2px dashed rgb(118, 184, 79);
 }
 
+
+.cpu_0 {
+    color : rgb(95, 141, 78);
+}
+.cpu_2 {
+    color : rgb(206, 119, 119);
+}
+.cpu_4 {
+    color : rgb(115, 169, 173);
+}
+.cpu_6 {
+    color : rgb(186, 148, 209);
+}
+.cpu_1 {
+    color : gb(184, 118, 79);
+}
+.cpu_3 {
+    color : rgb(79, 184, 175);
+}
+.cpu_5 {
+    color :rgb(184, 79, 170);
+}
+.cpu_7 {
+    color : rgb(118, 184, 79);
+}
+
+
 th.none_border{
     border-left: 0px;
     font-size: 15px;
@@ -87,6 +114,7 @@ h4{
   }
   .container .container2{
     margin: 0 10px ;
+    display: flex;
     
   }
   .container .container3 h6{
@@ -106,3 +134,12 @@ h4{
     position: absolute;
     right: 30px;
 }
+.conChart1 {
+    display: flex;
+    flex-direction:  column;
+  }
+  .conChart2 {
+    display: flex;
+    flex-direction:  column
+    
+  }
