@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Noto+Sans:wght@400;700&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="../css/styleProcesses.css">
+    <link rel="stylesheet" href="../css/component.css">
     <title>Document</title>
 </head>
 <body>
@@ -26,6 +28,12 @@
           <p class="number">0</p>
           <p class="txt">zombie</p>
         </div>
+        <div class="searchUser">
+          <div class="title_input input input_full">
+            <i class="fa-regular fa-user"></i>            
+            <input type="text" id="user" name="User" placeholder="User">
+        </div>
+        </div>
         <div class="table">
           <table class="tableProcesses">
             
@@ -33,6 +41,61 @@
         </div>
       </div>
       <script type="module" src="../../Script/Processes/handleDataProcesses.js"></script>
-        <script type="module" src="../../Script/Processes/renderElement.js"></script>
+      <script type="module" src="../../Script/Processes/renderElement.js"></script>
+      <script>
+        let table_sort_elements = document.querySelectorAll('table');
+if(table_sort_elements)
+{
+    table_sort_elements = Array.isArray(table_sort_elements) ? table_sort_elements : Object.values(table_sort_elements);
+    table_sort_elements.forEach(table_sort_element=>{
+      let thead_cells = table_sort_element.querySelectorAll('thead>tr>th>*');
+      console.log(thead_cells);
+      let icon = document.querySelector('i');
+      console.log(icon);
+        if(thead_cells)
+        {
+            thead_cells = Array.from(thead_cells);
+
+            thead_cells.forEach((thead_cell, index)=>{
+                thead_cell.addEventListener('click', function(){
+                  icon.classList.toggle('asc');
+                  this.classList.toggle('asc');
+                    sortTableByColumn(table_sort_element, index, !this.classList.contains('asc'));
+                });
+            });
+        }
+    });
+}
+
+
+function sortTableByColumn(table, column, desc=false) 
+{
+    let tbody = table.querySelector('tbody'),
+        rows  = tbody.querySelectorAll('tr');
+
+    rows  = rows.isArray ? rows : Object.values(rows);
+
+    function compare(a, b) {
+        let aText = a.children[column].innerText.trim(),
+            bText = b.children[column].innerText.trim();
+        
+        return (aText < bText) ? -1 : 1;
+    }
+
+    rows.sort(compare);
+
+    if(desc) rows.reverse();
+
+    tbody.innerHTML = '';
+
+    let i = 0;
+    while (i<rows.length) {
+        tbody.appendChild(rows[i]);
+        i++;
+    }
+}
+
+
+      </script>
 </body>
 </html>

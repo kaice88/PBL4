@@ -16,17 +16,49 @@ tr {
 }
 table{
     border-spacing: 10px;
-    padding: 15px;
+    /* padding: 15px; */
+    padding: 15px 3px 15px 0;
 }
-th{
-    border-left: 2px dashed rgb(79, 151, 184);
+th.cpu{
     text-align: left;
     margin-left: 30px;
     margin-bottom: 30px;
 }
 
-th.solid-line{
-    border-left: 2px solid rgb(79, 151, 184);
+.tr_0 th.cpu.solid-line{
+    border-left: 2px solid rgb(95, 141, 78);
+}
+.tr_2 th.cpu.solid-line{
+    border-left: 2px solid rgb(206, 119, 119);
+}
+.tr_4 th.cpu.solid-line{
+    border-left: 2px solid rgb(115, 169, 173);
+}
+.tr_6 th.cpu.solid-line{
+    border-left: 2px solid rgb(186, 148, 209);
+}
+.tr_1 th.cpu{
+    border-left: 2px dashed rgb(184, 118, 79);
+}
+.tr_3 th.cpu{
+    border-left: 2px dashed rgb(79, 184, 175);
+}
+.tr_5 th.cpu{
+    border-left: 2px dashed rgb(184, 79, 170);
+}
+.tr_7 th.cpu{
+    border-left: 2px dashed rgb(118, 184, 79);
+}
+
+th.none_border{
+    border-left: 0px;
+    font-size: 15px;
+    font-weight: normal;
+    color: rgba(28, 28, 28, 0.5);
+    transform: rotate(-90deg);
+}
+
+th.cpu.solid-line{
     text-align: left;
     margin-left: 30px;
 }

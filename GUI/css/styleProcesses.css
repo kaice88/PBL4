@@ -22,6 +22,10 @@ body {
   background-color: white;
   text-align: left;
 } */
+.table{
+  position: absolute;
+  top: 55px;
+}
 
 table {
   table-layout: fixed;  /*add*/
@@ -32,12 +36,12 @@ table {
 }
 /* add */
 thead{
-  width: calc(100% - 18px);
+  width: calc(100% - 12px);
   display: table;
 }
 
 tbody{
-  height: 634px;
+  height: 630px;
   overflow: auto;
   display: block;
   width: 100%;
@@ -132,4 +136,50 @@ thead tr , tbody tr {
 .content .task_content .number{
   font-weight: bold;
   padding-right: 0.5rem;
+}
+
+/* add  */
+.input {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 5px 5px;
+  margin: 6px 170px 10px 170px;
+  display: flex;
+  width: 300px;
+  position: absolute;
+  right: 0;
+  font-size: 17px;
+  color: #4f546c;
+
+}
+
+input{
+    border: none;
+    font-family: Lato, sans-serif;
+    color: #4f546c;
+    font-size: 17px;
+    width: 100%;
+}
+
+i {
+  padding: 5px 10px 5px 5px;
+  color:  #5584AC;
+}
+
+
+input:focus{
+    outline: none;
+}
+
+i.sort.asc{
+  transform: rotate(180deg);
+  top: 20px;
+}
+
+i.sort{
+   display: flex;
+   position: absolute;
+   top: 15px;
+   left: 65px;
+   cursor: pointer;
 }
