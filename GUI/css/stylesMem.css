@@ -32,7 +32,7 @@ table {
 }
 /* add */
 thead{
-  width: calc(100% - 18px);
+  width: calc(100% - 12px);
   display: table;
 }
 
@@ -76,6 +76,4 @@ thead tr , tbody tr {
   tr:nth-child(even) {
     background-color: #f3f8fe;
   }
-
-
 

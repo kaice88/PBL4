@@ -6,8 +6,12 @@ const tasks = document.querySelectorAll(".task_content .number");
 function createElement() {
   var str1 = `<thead><tr class="title_table">`;
   var str2 = `<tbody>`;
-  arrayInfo()[0].forEach((item) => {
-    str1 += `<th>${item}</th>`;
+  arrayInfo()[0].forEach((item, index) => {
+    str1 += `<th>${item}`;
+    if(index == 0){
+      str1 += '<div class="pid_icon"><i class="fa-solid fa-sort-down sort"></i></div>'
+    }
+    str1 += '</th>';
   });
   str1 += `</tr></thead>`;
 

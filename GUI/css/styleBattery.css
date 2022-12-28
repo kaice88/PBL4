@@ -1,0 +1,21 @@
+.refresh_but{
+    position: absolute;
+    right: 0;
+    top:0;
+    padding: 30px;
+}
+
+.refresh_but i{
+    font-size: 20px;
+    padding: 10px;
+    color: rgb(0, 0, 0, 0.8);
+}
+
+.refresh_but i:hover{
+    color:  #5584AC;
+}
+
+.refresh_but button{
+    background: none;
+    border: none;
+}

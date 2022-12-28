@@ -16,13 +16,15 @@ const name = [
 function createElement(obj) {
   var str2 = ``;
   var str3 = ``;
-  var str = ``;
+  var str = `<tbody>`;
   obj.forEach((i, index) => {
-    str = `<tr class="cpu1">`;
+    str = `<tr class="cpu1 tr_${index}"><th class="none_border"><div class="cpu_txt">CPU${index}</div></th>`;
+    // str += '<p>CPU</p>';
+    // str += '<tr><div class="cpu_txt">CPU ${index}</div></tr>';
     if (index % 2 == 0) {
       Object.values(i).forEach((item, index) => {
         if (index <= 3) {
-          str += `<th class="solid-line">
+          str += `<th class="solid-line cpu">
         <h4>${name[index]}</h4>
         <h2>${item}%</h2>
         </th>`;
@@ -32,13 +34,14 @@ function createElement(obj) {
     } else {
       Object.values(i).forEach((item, index) => {
         if (index <= 3) {
-          str += `<th >
+          str += `<th class="cpu" >
           <h4>${name[index]}</h4>
           <h2>${item}%</h2>
           </th>`;
         }
       });
       str3 += str + `</tr>`;
+      str += '<tbody>';
     }
   });
 
