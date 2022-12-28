@@ -150,6 +150,7 @@ thead tr , tbody tr {
   right: 0;
   font-size: 17px;
   color: #4f546c;
+  margin: 4px 100px 10px 100px;
 
 }
 
@@ -182,4 +183,20 @@ i.sort{
    top: 15px;
    left: 65px;
    cursor: pointer;
+}
+
+.button button{
+  font-family: Lato, sans-serif;
+  /* color: #4f546c; */
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid;
+  background-color:rgb(84, 130, 171) ;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color:rgb(84, 130, 171, 0.8) ;
 }
